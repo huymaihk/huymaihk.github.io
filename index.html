@@ -1,27 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-	<meta charset="utf-8"/>
-	<meta name="description" content="First Website"/>
-	<meta name="author" content="Huymai"/>
-	<meta name="country" content="Vietnam"/>
-	<title> HUY MAI RESUME </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Account</title>
+    <link rel="stylesheet" href="loginstyles.css">
 </head>
 <body>
-	<h1>My resume</h1>
-	<hr>
-	<h2>Contact infomation</h2>
-	<p>	 <em> i am working in the information techmology field </em> </p>
-	<ul>
-		<li><strong>Fullname:</strong> Huy mai</li>
-		<li><strong>Contry:</strong> Viet Nam</li>
-	</ul>
-	<hr>
-	<h2>Education</h2>
-	<ol>
-		<li>Hanoi-Amsterdam Highshool</li>
-		<li>Swinburne Universsity</li>
-		<li>Deakin University</li>
-	</ol>
+    <div class="container">
+        <div class="left">
+            <img src="image/water-pump.png" alt="Pumping station monitoring and control system">
+            <h2>Pumping station monitoring and control system</h2>
+        </div>
+        <div class="right">
+            <h2>Login Account</h2>
+            <form id="loginForm" action="login.php" method="POST">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">LOGIN</button>
+                <label class="showpassword">
+                    <input type="checkbox" id="showpassword"> Show Password
+                </label>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
