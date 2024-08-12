@@ -1,0 +1,228 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #2b0a3d;
+    color: #fff;
+    height: 100vh;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.sidebar-header h2 {
+    margin: 10px 0;
+}
+
+.nav-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav-list li {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.nav-list li a img {
+    margin-right: 10px;
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
+
+.nav-list li a:hover {
+    border-color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#logoutBtn {
+    display: block;
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #ff5e57;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#logoutBtn:hover {
+    background-color: #6a0dad;
+    border: none;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#logoutBtn img {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.content {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header-top {
+    background-color: #2b0a3d;
+    color: #fff;
+    padding: 10px;
+}
+
+.uth-logo {
+    width: 500px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+.header h1, .header h2, .header h3, .header p {
+    margin: 10px 0;
+}
+
+.monitor-dashboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.monitor-cards-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.monitor-card {
+    background-color: #3f2a56;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+.monitor-card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.card-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.card-value {
+    font-size: 24px;
+}
+
+#pressureChart {
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.data-dashboard {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.table-container {
+    max-height: 650px;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+#data-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+#data-table th, #data-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#data-table th {
+    background-color: #3f2a56;
+    color: white;
+}
+/* Add styles for the error dashboard */
+.error-dashboard {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.table-container {
+    max-height: 650px;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+#error-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+#error-table th, #error-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#error-table th {
+    background-color: #3f2a56;
+    color: white;
+}

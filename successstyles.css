@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #e0f7fa;
+}
+
+.message {
+    text-align: center;
+}
+
+.message h1 {
+    color: #00796b;
+}
+
+.message p {
+    color: #004d40;
+}
+
+.message a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #00796b;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}

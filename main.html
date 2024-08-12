@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Interface</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <img src="image/water-pump.png" alt="Pumping station monitoring and control system" class="logo">
+                <h2>Welcome, User</h2>
+            </div>
+            <ul class="nav-list">
+                <li><a href="#" onclick="showHome()"><img src="image/icons8_home_page_25px.png" alt="Home Icon" class="icon1"> HOME</a></li>
+                <li><a href="#" onclick="showMonitor()"><img src="image/icon1.png" alt="Monitor Icon" class="icon2"> MONITOR</a></li>
+                <li><a href="#" onclick="showDATA()"><img src="image/icons8_database_view_25px_1.png" alt="PID Icon" class="icon4"> DATA</a></li>
+                <li><a href="#" onclick="showERROR()"><img src="image/icons8_error_35px.png" alt="Data Icon"> ERROR</a></li>
+            </ul>
+            <button id="logoutBtn"><img src="image/icons8_Logout_Rounded_Up_25px_1.png" alt="Logout Icon"> Sign out</button>
+        </div>
+        <div class="content">
+            <div id="homeContent" class="header">
+                <div class="header-top">
+                    <h1>Pumping station monitoring and control system</h1>
+                </div>
+                <div class="header-middle">
+                    <img src="image/logo-full.png" alt="UTH University of Transport Hochiminh City" class="uth-logo">
+                    <h1>LUẬN VĂN TỐT NGHIỆP</h1>
+                </div>
+                <h2>ĐỀ TÀI: HỆ THỐNG GIÁM SÁT VÀ ĐIỀU KHIỂN TRẠM BƠM</h2>
+                <h3>Giáo viên hướng dẫn: Lê Thị Ngọc Quyên</h3>
+                <p>SV thực hiện: Mai Đức Huy 2051050121, Nguyễn Hữu Tài 205105</p>
+            </div>
+            <div id="monitorContent" class="monitor-dashboard" style="display: none;">
+                <div class="monitor-cards-container">
+                    <div class="monitor-card">
+                        <img src="image/icons8_pressure_60px.png" alt="Pressure Icon">
+                        <div class="card-title">Pressure</div>
+                        <div class="card-value" id="pressureValue">0</div>
+                    </div>
+                    <div class="monitor-card">
+                        <img src="image/icons8_speed_60px.png" alt="RPM Icon">
+                        <div class="card-title">RPM PUMP1</div>
+                        <div class="card-value" id="rpm1Value">0</div>
+                    </div>
+                    <div class="monitor-card">
+                        <img src="image/icons8_speed_60px.png" alt="RPM Icon">
+                        <div class="card-title">RPM PUMP2</div>
+                        <div class="card-value" id="rpm2Value">0</div>
+                    </div>
+                    <div class="monitor-card">
+                        <img src="image/icons8_frequency_60px.png" alt="Frequency Icon">
+                        <div class="card-title">Frequency1</div>
+                        <div class="card-value" id="frequency1Value">0</div>
+                    </div>
+                    <div class="monitor-card">
+                        <img src="image/icons8_frequency_60px.png" alt="Frequency Icon">
+                        <div class="card-title">Frequency2</div>
+                        <div class="card-value" id="frequency2Value">0</div>
+                    </div>
+                </div>
+                <canvas id="pressureChart" width="400" height="200"></canvas>
+            </div>
+            <div id="dataContent" class="data-dashboard" style="display: none;">
+                <div class="table-container">
+                    <table id="data-table">
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>Pressure</th>
+                                <th>RPM1</th>
+                                <th>RPM2</th>
+                                <th>Frequency1</th>
+                                <th>Frequency2</th>
+                                <th>data_setpoint</th>
+                                <th>date_Pressure</th>
+                                <th>time_Pressure</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="errorContent" class="error-dashboard" style="display: none;">
+                <div class="table-container">
+                    <table id="error-table">
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>Error Name</th>
+                                <th>Data Error</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
