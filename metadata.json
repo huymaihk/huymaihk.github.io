@@ -1,0 +1,6 @@
+{
+  "name": "Chợ Máy Ảnh Cũ Nhật Bản",
+  "description": "Cửa hàng máy ảnh và ống kính chính hãng đã qua sử dụng, kiểm định chất lượng, bảo hành 12 tháng uy tín tại Việt Nam.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

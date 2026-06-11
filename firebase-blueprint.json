@@ -1,0 +1,168 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "Product schema for Uniqlo app",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique key or randomly generated Firestore document ID"
+        },
+        "name": {
+          "type": "string",
+          "description": "Product name"
+        },
+        "price": {
+          "type": "number",
+          "description": "Current active selling price"
+        },
+        "originalPrice": {
+          "type": "number",
+          "description": "Original retail price, used to show discounts"
+        },
+        "category": {
+          "type": "string",
+          "description": "Primary department like Nữ, Nam, Trẻ em, Trẻ sơ sinh"
+        },
+        "subcategory": {
+          "type": "string",
+          "description": "Product type like Áo thun, Quần dài, Áo khoác"
+        },
+        "description": {
+          "type": "string",
+          "description": "Full product description details and materials"
+        },
+        "images": {
+          "type": "array",
+          "description": "List of compressed base64 images or valid reference URLs",
+          "items": { "type": "string" }
+        },
+        "sizes": {
+          "type": "array",
+          "description": "Available product dimensions (e.g., S, M, L, XL)",
+          "items": { "type": "string" }
+        },
+        "colors": {
+          "type": "array",
+          "description": "Visual variations in hex style code and Vietnamese name",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "code": { "type": "string" }
+            }
+          }
+        },
+        "seoTitle": {
+          "type": "string",
+          "description": "Strategic metadata title of product page"
+        },
+        "seoDescription": {
+          "type": "string",
+          "description": "Strategic metadata tags used in search result descriptions"
+        },
+        "seoKeywords": {
+          "type": "string",
+          "description": "Comma-separated search keyword strings to improve Google indexing rank"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Initialization timeline tracking"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last edit date tracker"
+        }
+      },
+      "required": ["name", "price", "category", "description", "images"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Purchased record tracking",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Auto-filled unique Firestore document ID"
+        },
+        "customerName": {
+          "type": "string",
+          "description": "Full client name"
+        },
+        "customerEmail": {
+          "type": "string",
+          "description": "Billing communication electronic address"
+        },
+        "customerPhone": {
+          "type": "string",
+          "description": "Mobile contact number"
+        },
+        "customerAddress": {
+          "type": "string",
+          "description": "Standard delivery coordinates"
+        },
+        "items": {
+          "type": "array",
+          "description": "Line items from the shopping cart",
+          "items": {
+            "type": "object",
+            "properties": {
+              "productId": { "type": "string" },
+              "name": { "type": "string" },
+              "price": { "type": "number" },
+              "quantity": { "type": "number" },
+              "color": { "type": "string" },
+              "size": { "type": "string" },
+              "image": { "type": "string" }
+            }
+          }
+        },
+        "totalAmount": {
+          "type": "number",
+          "description": "Aggregated sum in Vietnamese Dong including mock fees"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["Chờ xử lý", "Đã xác nhận", "Đang giao", "Đã hoàn thành", "Đã hủy"],
+          "description": "State within the fulfillment process"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Shopping order datetime"
+        }
+      },
+      "required": ["customerName", "customerEmail", "customerAddress", "items", "totalAmount", "status"]
+    },
+    "User": {
+      "title": "User",
+      "description": "Registered shoppers or store operators",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string", "enum": ["customer", "admin"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "name", "email", "role"]
+    }
+  },
+  "firestore": {
+    "products/{productId}": {
+      "schema": "Product",
+      "description": "Store items collection for Uniqlo catalogue"
+    },
+    "orders/{orderId}": {
+      "schema": "Order",
+      "description": "Client placement transaction registries"
+    },
+    "users/{userId}": {
+      "schema": "User",
+      "description": "Users storage for customer accounts and store roles"
+    }
+  }
+}
